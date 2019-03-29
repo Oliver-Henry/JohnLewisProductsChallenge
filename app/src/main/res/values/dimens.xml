@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="products_item_margin">8dp</dimen>
+    <dimen name="products_item_padding">8dp</dimen>
+    <dimen name="products_image_height">250dp</dimen>
+</resources>

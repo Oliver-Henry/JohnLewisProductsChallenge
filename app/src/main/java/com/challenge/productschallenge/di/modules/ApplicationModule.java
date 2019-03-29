@@ -6,7 +6,7 @@ import android.content.Context;
 import dagger.Binds;
 import dagger.Module;
 
-@Module
+@Module(includes = NetworkModule.class)
 public abstract class ApplicationModule {
 
     @Binds

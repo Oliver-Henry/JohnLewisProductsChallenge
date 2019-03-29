@@ -11,9 +11,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://jl-nonprod-syst.apigee.net/\"")
+            buildConfigField("String", "RELATIVE_URL", "\"v1/categories/600001506/products\"")
+            buildConfigField("String", "API_KEY", "\"2ALHCAAs6ikGRBoy6eTHA58RaG097Fma\"")
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"https://jl-nonprod-syst.apigee.net/\"")
+            buildConfigField("String", "RELATIVE_URL", "\"v1/categories/600001506/products\"")
+            buildConfigField("String", "API_KEY", "\"2ALHCAAs6ikGRBoy6eTHA58RaG097Fma\"")
+
         }
     }
     compileOptions {

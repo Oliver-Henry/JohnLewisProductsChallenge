@@ -3,11 +3,12 @@ package com.challenge.productschallenge.di.modules;
 import com.challenge.productschallenge.BuildConfig;
 import com.challenge.productschallenge.common.Constants;
 import com.challenge.productschallenge.data.remote.ProductsService;
-import com.challenge.productschallenge.scopes.AppScoped;
 import com.challenge.productschallenge.scopes.LoggingInterceptor;
 import com.challenge.productschallenge.scopes.NetworkInterceptor;
 
 import java.util.concurrent.TimeUnit;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -25,7 +26,6 @@ public class NetworkModule {
 
 
     @Provides
-    @AppScoped
     @LoggingInterceptor
     Interceptor provideLoggingInterceptor() {
         return new HttpLoggingInterceptor()
@@ -33,7 +33,6 @@ public class NetworkModule {
     }
 
     @Provides
-    @AppScoped
     @NetworkInterceptor
     Interceptor provideAPIKeyInterceptor() {
         return chain -> {
@@ -50,7 +49,7 @@ public class NetworkModule {
 
 
     @Provides
-    @AppScoped
+    @Singleton
     OkHttpClient provideOkHttpClient(@LoggingInterceptor Interceptor loggingInterceptor, @NetworkInterceptor Interceptor apiInterceptor) {
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
@@ -60,7 +59,7 @@ public class NetworkModule {
                 .build();
     }
 
-    @AppScoped
+    @Singleton
     @Provides
     Retrofit provideRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
@@ -71,7 +70,7 @@ public class NetworkModule {
                 .build();
     }
 
-    @AppScoped
+    @Singleton
     @Provides
     ProductsService provideProductsService(Retrofit retrofit) {
         return retrofit.create(ProductsService.class);

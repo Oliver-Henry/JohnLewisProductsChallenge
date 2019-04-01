@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProductsChallenge</string>
+    <string name="error_message_string">Something went wrong</string>
+    <string name="price_now">Now £%s</string>
+    <string name="price_was_now">Was £%s, Now £%s</string>
+    <string name="reduced_by">Reduced by £%1$s</string>
 </resources>

@@ -3,4 +3,6 @@
     <dimen name="products_item_margin">8dp</dimen>
     <dimen name="products_item_padding">8dp</dimen>
     <dimen name="products_image_height">250dp</dimen>
+    <dimen name="products_items_general_margin_top">5dp</dimen>
+    <dimen name="product_image_width">250dp</dimen>
 </resources>

@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         tools:context=".ui.products.ProductsActivity"
         tools:itemCount="20"
-        tools:layoutManager="LinearLayoutManager"
+        tools:spanCount="2"
+        tools:layoutManager="GridLayoutManager"
         tools:listitem="@layout/products_list_recycler_view_item" />
 
     <ProgressBar

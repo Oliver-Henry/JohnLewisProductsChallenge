@@ -22,7 +22,7 @@ public class Product {
     private String code;
     @SerializedName("averageRating")
     @Expose
-    private int averageRating;
+    private double averageRating;
     @SerializedName("reviews")
     @Expose
     private int reviews;
@@ -255,11 +255,11 @@ public class Product {
         return this;
     }
 
-    public int getAverageRating() {
+    public double getAverageRating() {
         return averageRating;
     }
 
-    public void setAverageRating(int averageRating) {
+    public void setAverageRating(double averageRating) {
         this.averageRating = averageRating;
     }
 

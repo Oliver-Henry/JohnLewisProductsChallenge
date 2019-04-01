@@ -24,6 +24,7 @@ public class ColorSwatch {
     @SerializedName("skuId")
     @Expose
     private String skuId;
+    private String rgbColor;
 
     /**
      * No args constructor for use in serialization
@@ -129,4 +130,11 @@ public class ColorSwatch {
         return this;
     }
 
+    public String getRgbColor() {
+        return rgbColor;
+    }
+
+    public void setRgbColor(String rgbColor) {
+        this.rgbColor = rgbColor;
+    }
 }

@@ -2,7 +2,7 @@ package com.challenge.productschallenge.ui.products;
 
 import android.view.View;
 
-import com.challenge.productschallenge.data.models.Product;
+import com.challenge.productschallenge.data.models.ProductsItem;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +13,7 @@ class ProductsViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
     }
 
-    public void bind(Product product) {
+    public void bind(ProductsItem product) {
 
     }
 }

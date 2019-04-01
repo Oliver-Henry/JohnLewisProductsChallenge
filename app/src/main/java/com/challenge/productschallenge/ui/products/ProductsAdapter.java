@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.challenge.productschallenge.R;
-import com.challenge.productschallenge.data.models.Product;
+import com.challenge.productschallenge.data.models.ProductsItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
 
-    private List<Product> productList = new ArrayList<>();
+    private List<ProductsItem> productList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -35,7 +35,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
         return productList.size();
     }
 
-    public void setProductList(List<Product> products) {
+    public void setProductList(List<ProductsItem> products) {
         if (!productList.isEmpty()) {
             productList.clear();
         }

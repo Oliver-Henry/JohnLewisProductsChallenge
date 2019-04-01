@@ -32,7 +32,6 @@ public class ProductsViewModel extends BaseViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
-        repository.onCleared();
     }
 
     private void getProducts() {

@@ -3,10 +3,13 @@ package com.challenge.productschallenge.ui.products;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.challenge.productschallenge.R;
+import com.challenge.productschallenge.data.models.ColorSwatch;
 import com.challenge.productschallenge.data.models.ProductsItem;
+import com.challenge.productschallenge.ui.ColorSwatchView;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
@@ -28,6 +31,8 @@ class ProductsViewHolder extends RecyclerView.ViewHolder {
     TextView productNowPriceLabelTextView;
     @BindView(R.id.product_reduced_by_text)
     TextView productReducedByText;
+    @BindView(R.id.color_swatch_container)
+    LinearLayout colorSwatchLinearLayout;
 
     private Context context;
 
@@ -44,6 +49,15 @@ class ProductsViewHolder extends RecyclerView.ViewHolder {
         productReducedByText.setText(context.getString(R.string.reduced_by, getPrice(product.getPriceReduction())));
         productTitleTextView.setText(product.getTitle());
         productNowPriceLabelTextView.setText(getPriceLabel(product.getWas(), product.getNowPrice()));
+
+        // show color swatches - show rgb colors as background color
+        for (ColorSwatch colorSwatch : product.getColorSwatches()) {
+            if (colorSwatch != null) {
+                ColorSwatchView colorSwatchView = new ColorSwatchView(context);
+                colorSwatchView.setBackGroundColor(colorSwatch.getRgbColor());
+                colorSwatchLinearLayout.addView(colorSwatchView);
+            }
+        }
     }
 
     private void loadImage(String imageUrl, ImageView imageView) {

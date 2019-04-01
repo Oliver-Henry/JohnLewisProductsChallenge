@@ -137,4 +137,19 @@ public class ColorSwatch {
     public void setRgbColor(String rgbColor) {
         this.rgbColor = rgbColor;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ColorSwatch)) return false;
+
+        ColorSwatch that = (ColorSwatch) o;
+
+        return getRgbColor() != null ? getRgbColor().equals(that.getRgbColor()) : that.getRgbColor() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getRgbColor() != null ? getRgbColor().hashCode() : 0;
+    }
 }

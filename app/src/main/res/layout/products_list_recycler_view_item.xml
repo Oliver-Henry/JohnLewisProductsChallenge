@@ -46,6 +46,12 @@
             android:layout_marginTop="@dimen/products_items_general_margin_top"
             tools:text="@tools:sample/lorem" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/color_swatch_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/products_item_margin"
+                android:orientation="horizontal" />
 
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

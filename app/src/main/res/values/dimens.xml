@@ -5,4 +5,5 @@
     <dimen name="products_image_height">250dp</dimen>
     <dimen name="products_items_general_margin_top">5dp</dimen>
     <dimen name="product_image_width">250dp</dimen>
+    <dimen name="color_swatch_image_size">20dp</dimen>
 </resources>

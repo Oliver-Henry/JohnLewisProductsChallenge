@@ -64,7 +64,9 @@ public class RepositoryImpl implements Repository {
         List<ColorSwatch> colorSwatchList = new ArrayList<>();
         for (ColorSwatch colorSwatch : colorSwatches) {
             colorSwatch.setRgbColor(colorConverter.getRGBColorFor(colorSwatch.getBasicColor()));
-            colorSwatchList.add(colorSwatch);
+            if (!colorSwatchList.contains(colorSwatch)) { // avoid adding duplicate colors
+                colorSwatchList.add(colorSwatch);
+            }
         }
         return colorSwatchList;
     }

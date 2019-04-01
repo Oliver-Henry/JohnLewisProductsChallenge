@@ -1,5 +1,6 @@
 package com.challenge.productschallenge.di.modules;
 
+import com.challenge.productschallenge.common.ColorConverter;
 import com.challenge.productschallenge.common.SchedulerProvider;
 import com.challenge.productschallenge.data.RepositoryImpl;
 import com.challenge.productschallenge.data.remote.RemoteDataSourceImpl;
@@ -38,5 +39,11 @@ public class ApplicationModule {
     @Singleton
     SchedulerProvider provideSchedulerProvider() {
         return new SchedulerProvider();
+    }
+
+    @Provides
+    @Singleton
+    ColorConverter provideColorConverter() {
+        return new ColorConverter();
     }
 }

@@ -27,7 +27,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ProductsViewHolder holder, int position) {
-
+        ProductsItem productsItem = productList.get(position);
+        holder.bind(productsItem);
     }
 
     @Override

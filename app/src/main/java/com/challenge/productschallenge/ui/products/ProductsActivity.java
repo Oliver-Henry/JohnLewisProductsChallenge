@@ -7,9 +7,10 @@ import android.widget.ProgressBar;
 
 import com.challenge.productschallenge.R;
 import com.challenge.productschallenge.ui.base.BaseActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
@@ -45,19 +46,19 @@ public class ProductsActivity extends BaseActivity {
 
     protected void initViews() {
         productsAdapter = new ProductsAdapter();
-        productsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        productsRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         productsRecyclerView.setAdapter(productsAdapter);
     }
 
     private void getShowSnackBar() {
         viewModel.getShowSnackBarLiveData().observe(this, showSnackBar -> {
-            SnackBa
+            Snackbar.make(parent, getString(R.string.error_message_string), Snackbar.LENGTH_LONG).show();
         });
     }
 
     private void getProducts() {
         viewModel.getProductsItemLiveData().observe(this, productsItems -> {
-
+            productsAdapter.setProductList(productsItems);
         });
     }
 

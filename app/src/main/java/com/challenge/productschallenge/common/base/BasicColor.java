@@ -1,6 +1,6 @@
 package com.challenge.productschallenge.common.base;
 
-public enum RGBColor {
+public enum BasicColor {
     Black,
     White,
     Red,

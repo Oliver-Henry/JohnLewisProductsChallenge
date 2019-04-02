@@ -4,25 +4,25 @@ package com.challenge.productschallenge.common;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.challenge.productschallenge.common.base.RGBColor.Acqua;
-import static com.challenge.productschallenge.common.base.RGBColor.Black;
-import static com.challenge.productschallenge.common.base.RGBColor.Blue;
-import static com.challenge.productschallenge.common.base.RGBColor.Cyan;
-import static com.challenge.productschallenge.common.base.RGBColor.Default;
-import static com.challenge.productschallenge.common.base.RGBColor.Fuschia;
-import static com.challenge.productschallenge.common.base.RGBColor.Grey;
-import static com.challenge.productschallenge.common.base.RGBColor.Green;
-import static com.challenge.productschallenge.common.base.RGBColor.Lime;
-import static com.challenge.productschallenge.common.base.RGBColor.Magenta;
-import static com.challenge.productschallenge.common.base.RGBColor.Maroon;
-import static com.challenge.productschallenge.common.base.RGBColor.Navy;
-import static com.challenge.productschallenge.common.base.RGBColor.Olive;
-import static com.challenge.productschallenge.common.base.RGBColor.Purple;
-import static com.challenge.productschallenge.common.base.RGBColor.Red;
-import static com.challenge.productschallenge.common.base.RGBColor.Silver;
-import static com.challenge.productschallenge.common.base.RGBColor.Teal;
-import static com.challenge.productschallenge.common.base.RGBColor.White;
-import static com.challenge.productschallenge.common.base.RGBColor.Yellow;
+import static com.challenge.productschallenge.common.base.BasicColor.Acqua;
+import static com.challenge.productschallenge.common.base.BasicColor.Black;
+import static com.challenge.productschallenge.common.base.BasicColor.Blue;
+import static com.challenge.productschallenge.common.base.BasicColor.Cyan;
+import static com.challenge.productschallenge.common.base.BasicColor.Default;
+import static com.challenge.productschallenge.common.base.BasicColor.Fuschia;
+import static com.challenge.productschallenge.common.base.BasicColor.Grey;
+import static com.challenge.productschallenge.common.base.BasicColor.Green;
+import static com.challenge.productschallenge.common.base.BasicColor.Lime;
+import static com.challenge.productschallenge.common.base.BasicColor.Magenta;
+import static com.challenge.productschallenge.common.base.BasicColor.Maroon;
+import static com.challenge.productschallenge.common.base.BasicColor.Navy;
+import static com.challenge.productschallenge.common.base.BasicColor.Olive;
+import static com.challenge.productschallenge.common.base.BasicColor.Purple;
+import static com.challenge.productschallenge.common.base.BasicColor.Red;
+import static com.challenge.productschallenge.common.base.BasicColor.Silver;
+import static com.challenge.productschallenge.common.base.BasicColor.Teal;
+import static com.challenge.productschallenge.common.base.BasicColor.White;
+import static com.challenge.productschallenge.common.base.BasicColor.Yellow;
 
 /**
  * Convert basic color to RGB format

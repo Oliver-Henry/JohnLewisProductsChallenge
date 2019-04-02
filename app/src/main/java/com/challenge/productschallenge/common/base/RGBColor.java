@@ -18,6 +18,7 @@ public enum RGBColor {
     Green,
     Purple,
     Teal,
-    Navy
+    Navy,
+    Default
 
 }

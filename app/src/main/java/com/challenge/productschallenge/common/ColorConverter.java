@@ -2,11 +2,13 @@ package com.challenge.productschallenge.common;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static com.challenge.productschallenge.common.base.RGBColor.Acqua;
 import static com.challenge.productschallenge.common.base.RGBColor.Black;
 import static com.challenge.productschallenge.common.base.RGBColor.Blue;
 import static com.challenge.productschallenge.common.base.RGBColor.Cyan;
+import static com.challenge.productschallenge.common.base.RGBColor.Default;
 import static com.challenge.productschallenge.common.base.RGBColor.Fuschia;
 import static com.challenge.productschallenge.common.base.RGBColor.Grey;
 import static com.challenge.productschallenge.common.base.RGBColor.Green;
@@ -27,7 +29,7 @@ import static com.challenge.productschallenge.common.base.RGBColor.Yellow;
  */
 public class ColorConverter {
 
-    private HashMap<String, String> colorHashMap = new HashMap<>();
+    private Map<String, String> colorHashMap = new HashMap<>();
 
     public ColorConverter() {
         initColors();
@@ -52,10 +54,12 @@ public class ColorConverter {
         colorHashMap.put(Teal.name(), "#008080");
         colorHashMap.put(White.name(), "#FFFFFF");
         colorHashMap.put(Yellow.name(), "#FFFF00");
+        colorHashMap.put(Default.name(), "#FFFFFF");
+
     }
 
     public String getRGBColorFor(String basicColor) {
         String rgbColor = colorHashMap.get(basicColor);
-        return rgbColor != null ? rgbColor : "";
+        return rgbColor != null ? rgbColor : colorHashMap.get("Default");
     }
 }

@@ -73,4 +73,8 @@ dependencies {
     // Architecture Components
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_components"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$arch_components"
+
+    testImplementation 'androidx.arch.core:core-testing:2.0.0'
+
+
 }

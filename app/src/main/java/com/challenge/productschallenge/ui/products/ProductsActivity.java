@@ -39,6 +39,8 @@ public class ProductsActivity extends BaseActivity {
 
         initViews();
 
+        viewModel.getProducts();
+
         getIsLoading();
         getProducts();
         getShowSnackBar();

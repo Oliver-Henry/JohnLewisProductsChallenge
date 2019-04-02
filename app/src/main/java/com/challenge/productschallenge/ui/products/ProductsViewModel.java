@@ -1,6 +1,5 @@
 package com.challenge.productschallenge.ui.products;
 
-import com.challenge.productschallenge.common.SchedulerProvider;
 import com.challenge.productschallenge.data.models.ProductsItem;
 import com.challenge.productschallenge.data.remote.base.Repository;
 import com.challenge.productschallenge.ui.base.BaseViewModel;
@@ -10,23 +9,19 @@ import java.util.List;
 import javax.inject.Inject;
 
 import androidx.lifecycle.MutableLiveData;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class ProductsViewModel extends BaseViewModel {
-
-    private final SchedulerProvider schedulerProvider;
-
 
     private MutableLiveData<List<ProductsItem>> productsItemLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> isLoadingLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> showSnackBarLiveData = new MutableLiveData<>();
 
     @Inject
-    public ProductsViewModel(CompositeDisposable compositeDisposable, Repository repository,
-                             SchedulerProvider schedulerProvider) {
+    public ProductsViewModel(CompositeDisposable compositeDisposable, Repository repository) {
         super(compositeDisposable, repository);
-        this.schedulerProvider = schedulerProvider;
-        getProducts();
     }
 
     @Override
@@ -34,10 +29,10 @@ public class ProductsViewModel extends BaseViewModel {
         super.onCleared();
     }
 
-    private void getProducts() {
+    public void getProducts() {
         addDisposable(repository.getProducts()
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable -> isLoadingLiveData.setValue(true))
                 .doFinally(() -> isLoadingLiveData.setValue(false))
                 .subscribe(productsItems -> productsItemLiveData.setValue(productsItems),
